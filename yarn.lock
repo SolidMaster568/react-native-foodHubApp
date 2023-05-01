@@ -1339,10 +1339,10 @@
     "@expo/config-plugins" "^5.0.1"
     plist "^3.0.5"
 
-"@react-native-firebase/in-app-messaging@^16.4.6":
-  version "16.4.6"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/in-app-messaging/-/in-app-messaging-16.4.6.tgz#9dc89ac18b0146149813969e78dbf94beac8de59"
-  integrity sha512-5v7G2eowJrf7gzsjAMgAuAJ/KWRHm/wplqrV075zxELpDpXCsRp7KQZCAv3i49e0h+PcnGdZD0ovzUBuW8ACkQ==
+"@react-native-firebase/in-app-messaging@16.4.0":
+  version "16.4.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/in-app-messaging/-/in-app-messaging-16.4.0.tgz#7fe4cd1d70710e54de8e5c6fb43508945d0219f1"
+  integrity sha512-tgLhtlK1V7IY25eu/WqihHQHJmK5trza5SMZoTfRcwcPyRQAcQ3gs7z8mxPNgzKRHDclcUW/zq9aI5sc7UkLzg==
 
 "@react-native/assets@1.0.0":
   version "1.0.0"
