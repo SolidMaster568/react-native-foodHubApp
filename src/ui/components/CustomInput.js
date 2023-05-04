@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   input: {
-    paddingVertical: units.height / 34,
+    paddingVertical: units.height / 50,
     fontSize: 17,
     flex: 1,
   },

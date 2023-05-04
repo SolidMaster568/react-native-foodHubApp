@@ -23,12 +23,16 @@ const Register = ({navigation}) => {
   const {loading, createUser} = authFirebase();
 
   const registerIntialValue = {
+    firstName: '',
+    lastName: '',
     email: '',
     password: '',
     rePassword: '',
   };
 
   const registerValidationSchema = Yup.object().shape({
+    firstName: Yup.string().min(3).max(20).required('First Name is required'),
+    secondName: Yup.string().min(3).max(20).required('Second Name is required'),
     email: Yup.string()
       .email('Email is not in correct format')
       .required('This field is required'),
@@ -66,9 +70,28 @@ const Register = ({navigation}) => {
                 <>
                   <Text style={styles.title}>Sign Up</Text>
                   <View style={{marginTop: units.height / 27}}>
-                    <Text style={styles.emailText}>E-mail</Text>
                     <CustomInput
-                      placeHolder="Your E-mail"
+                      placeHolder="First Name"
+                      value={values.firstName}
+                      onChangeText={handleChange('firstName')}
+                    />
+                    {errors.firstName && touched.firstName && (
+                      <Text style={styles.errorText}>{errors.firstName}</Text>
+                    )}
+                  </View>
+                  <View style={{marginTop: units.height / 27}}>
+                    <CustomInput
+                      placeHolder="Last Name"
+                      value={values.lastName}
+                      onChangeText={handleChange('lastName')}
+                    />
+                    {errors.lastName && touched.lastName && (
+                      <Text style={styles.errorText}>{errors.lastName}</Text>
+                    )}
+                  </View>
+                  <View style={{marginTop: units.height / 27}}>
+                    <CustomInput
+                      placeHolder="Email"
                       type="email-address"
                       value={values.email}
                       onChangeText={handleChange('email')}
@@ -78,9 +101,8 @@ const Register = ({navigation}) => {
                     )}
                   </View>
                   <View style={{marginTop: units.height / 32}}>
-                    <Text style={styles.emailText}>Password</Text>
                     <CustomInput
-                      placeHolder="Your password"
+                      placeHolder="Password"
                       value={values.password}
                       onChangeText={handleChange('password')}
                       secure
@@ -90,11 +112,10 @@ const Register = ({navigation}) => {
                     )}
                   </View>
                   <View style={{marginTop: units.height / 32}}>
-                    <Text style={styles.emailText}>Re-Password</Text>
                     <CustomInput
-                      placeHolder="Re password"
+                      placeHolder="Confirm Password"
                       value={values.rePassword}
-                      onChangeText={handleChange('rePassword')}
+                      onChangeText={handleChange('confirmPassword')}
                       secure
                     />
                     {errors.rePassword && touched.rePassword && (
